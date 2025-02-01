@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bottomNavIcon = document.querySelectorAll(".botton-nav-icon");
   const ctaBtn = document.querySelectorAll(".cta-btn");
   const nav = document.querySelectorAll(".navbar");
+  const unicode = document.querySelectorAll(".container");
+  const unicodeSection = document.querySelectorAll(".section");
   const list = document.querySelectorAll(".seller-list");
   const listCard = document.querySelectorAll(".seller-card");
   const listCardInactive = document.querySelectorAll(".seller-card-inactive");
@@ -39,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomNavIcon.forEach(nav => nav.style.color = "#333333");
       ctaBtn.forEach(nav => nav.style.backgroundColor = "#007bff");
       nav.forEach(nav => nav.style.backgroundColor = "#007bff");
+      unicode.forEach(nav => nav.style.backgroundColor = "#ffffff");
+      unicodeSection.forEach(nav => nav.style.backgroundColor = "#f1f1f1");
       listCard.forEach(nav => nav.style.backgroundColor = "#f1f1f1");
       listCardInactive.forEach(nav => nav.style.border = "2px solid rgb(221, 34, 34)");
       toggleButton.textContent = "dark_mode"; 
@@ -56,6 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomNavIcon.forEach(nav => nav.style.color = "white");
       ctaBtn.forEach(nav => nav.style.backgroundColor = "#111111");
       nav.forEach(nav => nav.style.backgroundColor = "#111111");
+      unicode.forEach(nav => nav.style.backgroundColor = "#111111");
+      unicodeSection.forEach(nav => nav.style.backgroundColor = "#222222");
       listCard.forEach(nav => nav.style.backgroundColor = "#45454547");
       listCardInactive.forEach(nav => nav.style.backgroundColor = "#dd22221f");
       toggleButton.textContent = "light_mode"; 
