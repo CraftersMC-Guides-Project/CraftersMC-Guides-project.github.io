@@ -1,6 +1,5 @@
-// Import Firebase modules (ensure this script runs in a module environment)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth, OAuthProvider, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -17,27 +16,46 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const microsoftProvider = new OAuthProvider("microsoft.com");
 
-// Function to handle Google Sign-In
 function signInWithGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
             const user = result.user;
             console.log("User Info:", user);
             alert(`Welcome ${user.displayName}!`);
-            window.location.href = "index.html"; // Redirect after login
+            window.location.href = "index.html";
         })
         .catch((error) => {
             console.error("Error:", error);
         });
 }
 
-// Attach event listener to Google sign-in button
 document.addEventListener("DOMContentLoaded", function() {
     const googleButton = document.querySelector(".google-auth");
     if (googleButton) {
         googleButton.addEventListener("click", signInWithGoogle);
     } else {
         console.error("Google Sign-In button not found!");
+    }
+});
+
+async function signInWithMicrosoft() {
+    try {
+        const result = await signInWithPopup(auth, microsoftProvider);
+        console.log("User Info:", result.user);
+        alert(`Welcome ${result.user.displayName}!`);
+        window.location.href = "index.html";
+    } catch (error) {
+        console.error("Auth Error:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const microsoftButton = document.querySelector(".microsoft-auth");
+    if (microsoftButton) {
+        microsoftButton.addEventListener("click", signInWithMicrosoft);
+    } else {
+        console.error("Microsoft Sign-In button not found!");
     }
 });
