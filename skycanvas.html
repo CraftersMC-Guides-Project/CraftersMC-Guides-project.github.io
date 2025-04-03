@@ -31,27 +31,10 @@
         <div></div>
     </div>
     <!-- Top Navbar -->
-    <div class="navbar">
-        <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
-        <div class="right">
-            <span class="menu-icon material-icons" id="darkModeToggle">dark_mode</span>
-            <a href="index.html"><img src="assets/cmc-guides.png"></a>
-        </div>
-    </div>
+    <div class="navbar"></div>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
-        <img src="assets/cmc-guides.png" alt="CMC Guides Logo">
-        <hr>
-        <a class="sidebar-link" href="rank-sellers.html">Rank Sellers</a>
-        <a class="sidebar-link" href="unicode.html">Unicode</a>
-        <a class="sidebar-link" href="journey-guides.html">Guides</a>
-        <a class="sidebar-link" href="bankInterestV2.html">Bank Interest Timer (Beta)</a>
-        <a class="sidebar-link" href="leaderboards.html">Collection Leaderboards</a>
-        <a class="sidebar-link" href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
-        <a class="sidebar-link" href="https://craftersmc.net/">CraftersMC Website</a>
-    </div>
+    <div class="sidebar" id="sidebar"></div>
 
     <div id="sidebar-overlay"></div>
     <button id="scrollToTopBtn"><span class="material-icons">north</span></button>
@@ -95,13 +78,6 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-
-<script>
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data)
-        .catch(error => console.error('Error loading the footer:', error));
-</script>
     </div>
 </body>
 
